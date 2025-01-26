@@ -18,7 +18,7 @@ const clear = require("gulp-clean-css");
 // Styles
 const styles = () => {
   return gulp
-    .src("css/style.scss")
+    .src("src/css/style.scss")
     .pipe(plumber())
     .pipe(sourcemap.init())
     .pipe(bulk())
@@ -31,7 +31,7 @@ const styles = () => {
     .pipe(clear({level: 2}))
     .pipe(concat("style.min.css"))
     .pipe(sourcemap.write("."))
-    .pipe(gulp.dest("../public/css"))
+    .pipe(gulp.dest("public/css"))
     .pipe(sync.stream());
 };
 exports.styles = styles;
@@ -39,7 +39,7 @@ exports.styles = styles;
 // Scripts
 const scripts = () => {
   return gulp
-    .src("js/modules/*.js")
+    .src("src/js/modules/*.js")
     .pipe(sourcemap.init())
     .pipe(uglify())
     .pipe(
@@ -49,20 +49,20 @@ const scripts = () => {
     )
     .pipe(concat("script.min.js"))
     .pipe(sourcemap.write("."))
-    .pipe(gulp.dest("../public/js"))
+    .pipe(gulp.dest("public/js"))
     .pipe(sync.stream());
 };
 exports.scripts = scripts;
 
 // Images
 const images = () => {
-  return gulp.src(['assets/**/*.{jpg,jpeg,png}', '!assets/icons/**/*'])
+  return gulp.src(['src/assets/**/*.{jpg,jpeg,png}', '!src/assets/icons/**/*'])
     .pipe(imagemin())
     .pipe(webp({ quality: 80 }))
-    .pipe(gulp.dest('../public/assets'))
+    .pipe(gulp.dest('public/assets'))
     .on('end', () => {
-      gulp.src('assets/**/*.webp')
-        .pipe(gulp.dest('../public/assets'));
+      gulp.src('src/assets/**/*.webp')
+        .pipe(gulp.dest('public/assets'));
     });
 };
 exports.images = images;
@@ -72,22 +72,22 @@ const copy = (done) => {
   gulp
     .src(
       [
-        "js/vendor/*.js",
-        "css/vendor/*.css",
-        "fonts/*.{woff,woff2}",
-        "assets/icons/*",
-        "assets/*.mp3",
+        "src/js/vendor/*.js",
+        "src/css/vendor/*.css",
+        "src/fonts/*.{woff,woff2}",
+        "src/assets/icons/*",
+        "src/assets/*.mp3",
       ],
-      {base: '.'}
+      { base: 'src' }
     )
-    .pipe(gulp.dest("../public/"));
+    .pipe(gulp.dest("public/"));
   done();
 };
 exports.copy = copy;
 
 // Clean
 const clean = () => {
-  return del(["../public"], {force: true});
+  return del(["public"], {force: true});
 };
 exports.clean = clean;
 
