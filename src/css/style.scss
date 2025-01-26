@@ -61,8 +61,6 @@ html, body {
     flex-direction: column;
     gap: 50px;
 
-    margin-bottom: 50px;
-
     @media (max-width: $media-medium) {
       gap: 30px;
     }

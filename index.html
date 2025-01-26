@@ -19,9 +19,10 @@
     <link rel="manifest" href="/site.webmanifest" crossorigin="use-credentials">
     <meta name="application-name" content="New Year countdown">
 
-    <link rel="stylesheet" href="/public/css/style.min.css?v=1.1.0">
+    <link rel="stylesheet" href="/public/css/style.min.css?v=1.1.1">
     <link rel="stylesheet" href="/public/css/vendor/snow.min.css">
 </head>
+
 <body>
 <main class="new-year-countdown">
     <img class="new-year-countdown__image" src="/public/assets/main-image.webp" width="618" height="1000"
@@ -95,26 +96,24 @@
                 </div>
             </div>
         </div>
-
-        <div class="new-year-countdown__calendar"></div>
-
-        <audio class="new-year-countdown__audio" loop muted>
-            <source src="/public/assets/music.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-
-        <button class="new-year-countdown__audio-button" type="button">
-            <img class="new-year-countdown__scroll-icon" src="/public/assets/icons/audio-icon-stop.png"
-                 data-is-paused="true"
-                 data-original-src="/src/audio-icon-stop.png" alt="Иконка звука">
-        </button>
-
-        <button class="new-year-countdown__scroll-button" type="button">
-            <img class="new-year-countdown__scroll-icon" src="/public/assets/icons/scroll-icon.gif"
-                 alt="Иконка скролла">
-        </button>
     </div>
 </main>
+
+<audio class="new-year-countdown__audio" loop muted>
+    <source src="/public/assets/music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<button class="new-year-countdown__audio-button" type="button">
+    <img class="new-year-countdown__scroll-icon" src="/public/assets/icons/audio-icon-stop.png"
+         data-is-paused="true"
+         data-original-src="/src/audio-icon-stop.png" alt="Иконка звука">
+</button>
+
+<button class="new-year-countdown__scroll-button" type="button">
+    <img class="new-year-countdown__scroll-icon" src="/public/assets/icons/scroll-icon.gif"
+         alt="Иконка скролла">
+</button>
 
 <script src="/public/js/script.min.js?v=1.1.0"></script>
 <script src="/public/js/vendor/snow.js"></script>
