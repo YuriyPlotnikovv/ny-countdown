@@ -1,0 +1,50 @@
+{
+    "title-ru": "Счётчик до Нового Года",
+    "title-en": "New Year Countdown",
+    "textFirst-ru": "Личный проект для развлечения",
+    "textFirst-en": "Personal project for fun",
+    "textSecond-ru": "Проект с обратным отсчётом до Нового года, анимацией снега и веселой музыкой для поднятия Новогоднего настроения.",
+    "textSecond-en": "A project with a countdown to the New Year, snow animation and fun music to cheer up the New Year mood.",
+    "deploy": "https://countdown-training.netlify.app/",
+    "features": [
+        {
+            "name-ru": "Страницы",
+            "name-en": "Pages",
+            "description-ru": [
+                "Главная"
+            ],
+            "description-en": [
+                "Main"
+            ]
+        },
+        {
+            "name-ru": "Функциональность",
+            "name-en": "Functionality",
+            "description-ru": [
+                "Счётчик и календарь выполнены на чистом JS",
+                "Включение и выключение музыки",
+                "Снегопад",
+                "Адаптивность под разные устройства"
+            ],
+            "description-en": [
+                "The counter and calendar are made in pure JS",
+                "Turning music on and off",
+                "Snowfall",
+                "Adaptability to different devices"
+            ]
+        },
+        {
+            "name-ru": "Не реализовано",
+            "name-en": "Not Implemented",
+            "description-ru": [
+                "Гирлянда",
+                "Шар предсказаний",
+                "Потоковое воспроизведение музыки"
+            ],
+            "description-en": [
+                "Garland",
+                "Music streaming"
+            ]
+        }
+    ]
+}
