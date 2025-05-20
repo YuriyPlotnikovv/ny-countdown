@@ -20,6 +20,10 @@ A project with a countdown to the New Year, snow animation and fun music to chee
 
 ### About the project
 
+#### Development date:
+
+- January 2025
+
 #### Pages:
 
 - Main
@@ -64,6 +68,10 @@ Website: https://yuriyplotnikovv.ru
 ---
 
 ### О проекте
+
+#### Дата разработки:
+
+- Январь 2025
 
 #### Страницы:
 
