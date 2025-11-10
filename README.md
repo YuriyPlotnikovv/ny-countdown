@@ -1,6 +1,6 @@
 # New Year Countdown
 
-<img src=".info/poster.webp" alt="Poster" width="600" />
+
 
 [🇬🇧 English](#english) | [🇷🇺 Русский](#русский)
 
@@ -20,23 +20,16 @@ A project with a countdown to the New Year, snow animation and fun music to chee
 
 ### About the project
 
-#### Development date:
-
-- January 2025
-
-#### Pages:
-
-- Main
-
-#### Functionality:
-
+#### Functionality
 - The counter and calendar are made in pure JS
 - Turning music on and off
 - Snowfall
 - Adaptability to different devices
 
-#### Not Implemented:
+#### Pages
+- Main
 
+#### Not Implemented
 - Garland
 - Music streaming
 
@@ -69,23 +62,16 @@ Website: https://yuriyplotnikovv.ru
 
 ### О проекте
 
-#### Дата разработки:
-
-- Январь 2025
-
-#### Страницы:
-
-- Главная
-
-#### Функциональность:
-
+#### Функциональность
 - Счётчик и календарь выполнены на чистом JS
 - Включение и выключение музыки
 - Снегопад
 - Адаптивность под разные устройства
 
-#### Не реализовано:
+#### Страницы
+- Главная
 
+#### Не реализовано
 - Гирлянда
 - Шар предсказаний
 - Потоковое воспроизведение музыки
