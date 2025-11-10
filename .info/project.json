@@ -1,83 +1,57 @@
 {
-    "id": 7,
-    "title-ru": "Счётчик до Нового Года",
-    "title-en": "New Year Countdown",
-    "textFirst-ru": "Личный проект для развлечения",
-    "textFirst-en": "Personal project for fun",
-    "textSecond-ru": "Проект с обратным отсчётом до Нового года, анимацией снега и веселой музыкой для поднятия Новогоднего настроения.",
-    "textSecond-en": "A project with a countdown to the New Year, snow animation and fun music to cheer up the New Year mood.",
-    "deploy": "https://countdown-training.netlify.app/",
-    "features": [
-        {
-            "name-ru": "Дата разработки",
-            "name-en": "Development date",
-            "description-ru": [
-                "Январь 2025"
-            ],
-            "description-en": [
-                "January 2025"
-            ]
-        },
-        {
-            "name-ru": "Страницы",
-            "name-en": "Pages",
-            "description-ru": [
-                "Главная"
-            ],
-            "description-en": [
-                "Main"
-            ]
-        },
-        {
-            "name-ru": "Функциональность",
-            "name-en": "Functionality",
-            "description-ru": [
-                "Счётчик и календарь выполнены на чистом JS",
-                "Включение и выключение музыки",
-                "Снегопад",
-                "Адаптивность под разные устройства"
-            ],
-            "description-en": [
-                "The counter and calendar are made in pure JS",
-                "Turning music on and off",
-                "Snowfall",
-                "Adaptability to different devices"
-            ]
-        },
-        {
-            "name-ru": "Не реализовано",
-            "name-en": "Not Implemented",
-            "description-ru": [
-                "Гирлянда",
-                "Шар предсказаний",
-                "Потоковое воспроизведение музыки"
-            ],
-            "description-en": [
-                "Garland",
-                "Music streaming"
-            ]
-        }
-    ],
+    "date": "01.2025",
+    "complexity": "1",
+    "category": "personal",
+    "deploy": "https:\/\/countdown-training.netlify.app\/",
+    "title": {
+        "ru": "Счётчик до Нового Года",
+        "en": "New Year Countdown"
+    },
+    "textFirst": {
+        "ru": "Личный проект для развлечения",
+        "en": "Personal project for fun"
+    },
+    "textSecond": {
+        "ru": "Проект с обратным отсчётом до Нового года, анимацией снега и веселой музыкой для поднятия Новогоднего настроения.",
+        "en": "A project with a countdown to the New Year, snow animation and fun music to cheer up the New Year mood."
+    },
+    "functionality": {
+        "ru": [
+            "Счётчик и календарь выполнены на чистом JS",
+            "Включение и выключение музыки",
+            "Снегопад",
+            "Адаптивность под разные устройства"
+        ],
+        "en": [
+            "The counter and calendar are made in pure JS",
+            "Turning music on and off",
+            "Snowfall",
+            "Adaptability to different devices"
+        ]
+    },
     "technologies": [
-        {
-            "name": "HTML",
-            "icon": "icon-html",
-            "link": "https://html.spec.whatwg.org/multipage/"
-        },
-        {
-            "name": "SCSS",
-            "icon": "icon-scss",
-            "link": "https://sass-scss.ru/"
-        },
-        {
-            "name": "JavaScript",
-            "icon": "icon-js",
-            "link": "https://ecma-international.org/publications-and-standards/standards/ecma-262/"
-        },
-        {
-            "name": "Gulp",
-            "icon": "icon-gulp",
-            "link": "https://gulpjs.com/"
-        }
-    ]
+        "html",
+        "scss",
+        "javascript",
+        "gulp"
+    ],
+    "pages": {
+        "ru": [
+            "Главная"
+        ],
+        "en": [
+            "Main"
+        ]
+    },
+    "notImplemented": {
+        "ru": [
+            "Гирлянда",
+            "Шар предсказаний",
+            "Потоковое воспроизведение музыки"
+        ],
+        "en": [
+            "Garland",
+            "Music streaming"
+        ]
+    }
 }
