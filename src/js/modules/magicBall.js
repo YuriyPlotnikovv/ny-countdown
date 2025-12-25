@@ -16,9 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const ballInner = document.getElementById('ballInner');
   const predictionText = document.getElementById('predictionText');
   const loadingText = document.getElementById('loadingText');
-  const ballButton = document.getElementById('ballButton');
 
-  if (!magicBall || !ballInner || !predictionText || !loadingText || !ballButton) {
+  if (!magicBall || !ballInner || !predictionText || !loadingText) {
     console.warn('Magic ball elements not found');
     return;
   }
@@ -35,10 +34,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     isProcessing = true;
 
-    ballButton.style.display = 'none';
-    predictionText.style.display = 'none';
+    predictionText.style.opacity = '0';
     loadingText.classList.add('show');
-    loadingText.style.display = 'block';
+    loadingText.style.opacity = '1';
 
     ballInner.classList.add('thinking');
 
@@ -46,41 +44,23 @@ document.addEventListener('DOMContentLoaded', function() {
       const prediction = getRandomPrediction();
 
       loadingText.classList.remove('show');
-      loadingText.style.display = 'none';
+      loadingText.style.opacity = '0';
       ballInner.classList.remove('thinking');
       ballInner.classList.add('reveal');
 
       predictionText.textContent = prediction;
-      predictionText.style.display = 'block';
+      predictionText.style.opacity = '1';
 
       setTimeout(() => {
         ballInner.classList.remove('reveal');
         isProcessing = false;
-
-        setTimeout(() => {
-          if (!isProcessing) {
-            predictionText.style.display = 'none';
-            ballButton.style.display = 'block';
-          }
-        }, 3000);
-
       }, 800);
 
     }, 2000);
   }
 
-  ballButton.addEventListener('click', (e) => {
-    e.stopPropagation();
-    showPrediction();
-  });
+  magicBall.addEventListener('click', showPrediction);
 
-  magicBall.addEventListener('click', () => {
-    if (ballButton.style.display !== 'none') {
-      showPrediction();
-    }
-  });
-
-  predictionText.style.display = 'none';
-  loadingText.style.display = 'none';
-  ballButton.style.display = 'block';
+  predictionText.style.opacity = '1';
+  loadingText.style.opacity = '0';
 });
