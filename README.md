@@ -10,11 +10,11 @@
 
 ### New Year Countdown
 
-Project: https://countdown-training.netlify.app/
+Project: https://countdown.yuriyplotnikovv.ru/
 
 Personal project for fun
 
-A project with a countdown to the New Year, snow animation and fun music to cheer up the New Year mood.
+A project with a countdown to the New Year, fortune ball, snow animation and fun music to cheer up the New Year mood.
 
 ---
 
@@ -24,6 +24,7 @@ A project with a countdown to the New Year, snow animation and fun music to chee
 - The counter and calendar are made in pure JS
 - Turning music on and off
 - Snowfall
+- Fortune ball
 - Adaptability to different devices
 
 #### Pages
@@ -52,11 +53,11 @@ Website: https://yuriyplotnikovv.ru
 
 ### Счётчик до Нового Года
 
-Проект: https://countdown-training.netlify.app/
+Проект: https://countdown.yuriyplotnikovv.ru/
 
 Личный проект для развлечения
 
-Проект с обратным отсчётом до Нового года, анимацией снега и веселой музыкой для поднятия Новогоднего настроения.
+Проект с обратным отсчётом до Нового года, предсказаниями, анимацией снега и веселой музыкой для поднятия Новогоднего настроения.
 
 ---
 
@@ -66,6 +67,7 @@ Website: https://yuriyplotnikovv.ru
 - Счётчик и календарь выполнены на чистом JS
 - Включение и выключение музыки
 - Снегопад
+- Шар предсказаний
 - Адаптивность под разные устройства
 
 #### Страницы
@@ -73,7 +75,6 @@ Website: https://yuriyplotnikovv.ru
 
 #### Не реализовано
 - Гирлянда
-- Шар предсказаний
 - Потоковое воспроизведение музыки
 
 ---
