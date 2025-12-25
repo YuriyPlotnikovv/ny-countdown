@@ -35,54 +35,52 @@ document.addEventListener('DOMContentLoaded', function() {
 
     isProcessing = true;
 
-    // Скрываем текст и кнопку, показываем загрузку
-    predictionText.style.opacity = '0';
-    ballButton.style.opacity = '0';
-    ballButton.style.pointerEvents = 'none';
+    ballButton.style.display = 'none';
+    predictionText.style.display = 'none';
     loadingText.classList.add('show');
+    loadingText.style.display = 'block';
 
     ballInner.classList.add('thinking');
 
-    // Имитируем "размышление"
     setTimeout(() => {
       const prediction = getRandomPrediction();
 
-      // Скрываем загрузку и показываем результат
       loadingText.classList.remove('show');
+      loadingText.style.display = 'none';
       ballInner.classList.remove('thinking');
       ballInner.classList.add('reveal');
 
       predictionText.textContent = prediction;
-      predictionText.style.opacity = '1';
+      predictionText.style.display = 'block';
 
-      // Убираем анимацию через время
       setTimeout(() => {
         ballInner.classList.remove('reveal');
         isProcessing = false;
 
-        // Показываем кнопку снова через паузу
         setTimeout(() => {
           if (!isProcessing) {
-            ballButton.style.opacity = '1';
-            ballButton.style.pointerEvents = 'auto';
+            predictionText.style.display = 'none';
+            ballButton.style.display = 'block';
           }
-        }, 1000);
+        }, 3000);
 
       }, 800);
 
     }, 2000);
   }
 
-  // Обработчики событий
   ballButton.addEventListener('click', (e) => {
     e.stopPropagation();
     showPrediction();
   });
 
-  magicBall.addEventListener('click', showPrediction);
+  magicBall.addEventListener('click', () => {
+    if (ballButton.style.display !== 'none') {
+      showPrediction();
+    }
+  });
 
-  // Инициализация
-  predictionText.style.opacity = '1';
-  ballButton.style.opacity = '1';
-  loadingText.style.opacity = '0';
+  predictionText.style.display = 'none';
+  loadingText.style.display = 'none';
+  ballButton.style.display = 'block';
 });
