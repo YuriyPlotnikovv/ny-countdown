@@ -2,7 +2,7 @@
     "date": "01.2025",
     "complexity": "1",
     "category": "personal",
-    "deploy": "https:\/\/countdown-training.netlify.app\/",
+    "deploy": "https:\/\/countdown.yuriyplotnikovv.ru\/",
     "title": {
         "ru": "Счётчик до Нового Года",
         "en": "New Year Countdown"
@@ -12,20 +12,22 @@
         "en": "Personal project for fun"
     },
     "textSecond": {
-        "ru": "Проект с обратным отсчётом до Нового года, анимацией снега и веселой музыкой для поднятия Новогоднего настроения.",
-        "en": "A project with a countdown to the New Year, snow animation and fun music to cheer up the New Year mood."
+        "ru": "Проект с обратным отсчётом до Нового года, предсказаниями, анимацией снега и веселой музыкой для поднятия Новогоднего настроения.",
+        "en": "A project with a countdown to the New Year, fortune ball, snow animation and fun music to cheer up the New Year mood."
     },
     "functionality": {
         "ru": [
             "Счётчик и календарь выполнены на чистом JS",
             "Включение и выключение музыки",
             "Снегопад",
+            "Шар предсказаний",
             "Адаптивность под разные устройства"
         ],
         "en": [
             "The counter and calendar are made in pure JS",
             "Turning music on and off",
             "Snowfall",
+            "Fortune ball",
             "Adaptability to different devices"
         ]
     },
@@ -46,7 +48,6 @@
     "notImplemented": {
         "ru": [
             "Гирлянда",
-            "Шар предсказаний",
             "Потоковое воспроизведение музыки"
         ],
         "en": [
