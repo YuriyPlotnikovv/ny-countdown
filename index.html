@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name=viewport content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>New Year countdown</title>
     <meta name="description"
@@ -26,25 +26,25 @@
 <body>
 <main class="new-year-countdown">
     <div class="new-year-countdown__main-container">
+        <img class="new-year-countdown__image" src="/public/assets/main-image.webp" width="618" height="1000"
+             alt="Новогодняя ёлка">
+
         <div class="new-year-countdown__prediction">
             <h2>🔮 Магический шар предсказаний</h2>
 
             <div class="new-year-countdown__magic-ball" id="magicBall">
-                <div class="new-year-countdown__magic-ball-inner">
-                    <div class="new-year-countdown__magic-ball-display" id="predictionDisplay">?</div>
+                <div class="new-year-countdown__magic-ball-inner" id="ballInner">
                     <div class="new-year-countdown__magic-ball-stars"></div>
+                    <div class="new-year-countdown__magic-ball-content">
+                        <div class="new-year-countdown__magic-ball-text" id="predictionText">?</div>
+                        <div class="new-year-countdown__magic-ball-loading" id="loadingText">🔮 Думаю...</div>
+                        <button class="new-year-countdown__magic-ball-button" id="ballButton">
+                            Получить предсказание
+                        </button>
+                    </div>
                 </div>
             </div>
-
-            <button class="new-year-countdown__magic-ball-button" id="predictButton">
-                <span>Получить предсказание</span>
-            </button>
-
-            <div class="new-year-countdown__magic-ball-loading" id="loading">🔮 Думаю...</div>
         </div>
-
-        <img class="new-year-countdown__image" src="/public/assets/main-image.webp" width="618" height="1000"
-             alt="Новогодняя ёлка">
     </div>
 
     <div class="new-year-countdown__content">

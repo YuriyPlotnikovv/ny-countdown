@@ -13,15 +13,17 @@ document.addEventListener('DOMContentLoaded', function() {
   ];
 
   const magicBall = document.getElementById('magicBall');
-  const ballInner = document.querySelector('.new-year-countdown__magic-ball-inner');
-  const predictionDisplay = document.getElementById('predictionDisplay');
-  const predictButton = document.getElementById('predictButton');
-  const loading = document.getElementById('loading');
+  const ballInner = document.getElementById('ballInner');
+  const predictionText = document.getElementById('predictionText');
+  const loadingText = document.getElementById('loadingText');
+  const ballButton = document.getElementById('ballButton');
 
-  if (!magicBall || !ballInner || !predictionDisplay || !predictButton || !loading) {
+  if (!magicBall || !ballInner || !predictionText || !loadingText || !ballButton) {
     console.warn('Magic ball elements not found');
     return;
   }
+
+  let isProcessing = false;
 
   function getRandomPrediction() {
     const randomIndex = Math.floor(Math.random() * predictions.length);
@@ -29,43 +31,58 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function showPrediction() {
-    if (loading.classList.contains('show')) return;
+    if (isProcessing) return;
 
-    loading.classList.add('show');
+    isProcessing = true;
+
+    // Скрываем текст и кнопку, показываем загрузку
+    predictionText.style.opacity = '0';
+    ballButton.style.opacity = '0';
+    ballButton.style.pointerEvents = 'none';
+    loadingText.classList.add('show');
+
     ballInner.classList.add('thinking');
-    predictionDisplay.textContent = '?';
 
+    // Имитируем "размышление"
     setTimeout(() => {
       const prediction = getRandomPrediction();
 
-      loading.classList.remove('show');
+      // Скрываем загрузку и показываем результат
+      loadingText.classList.remove('show');
       ballInner.classList.remove('thinking');
       ballInner.classList.add('reveal');
 
-      predictionDisplay.textContent = prediction;
+      predictionText.textContent = prediction;
+      predictionText.style.opacity = '1';
 
+      // Убираем анимацию через время
       setTimeout(() => {
         ballInner.classList.remove('reveal');
+        isProcessing = false;
+
+        // Показываем кнопку снова через паузу
+        setTimeout(() => {
+          if (!isProcessing) {
+            ballButton.style.opacity = '1';
+            ballButton.style.pointerEvents = 'auto';
+          }
+        }, 1000);
+
       }, 800);
 
     }, 2000);
   }
 
-  predictButton.addEventListener('click', showPrediction);
-
-  magicBall.addEventListener('click', () => {
-    if (!loading.classList.contains('show')) {
-      showPrediction();
-    }
+  // Обработчики событий
+  ballButton.addEventListener('click', (e) => {
+    e.stopPropagation();
+    showPrediction();
   });
 
-  magicBall.addEventListener('mouseenter', () => {
-    if (!loading.classList.contains('show')) {
-      predictionDisplay.style.transform = 'scale(1.1)';
-    }
-  });
+  magicBall.addEventListener('click', showPrediction);
 
-  magicBall.addEventListener('mouseleave', () => {
-    predictionDisplay.style.transform = 'scale(1)';
-  });
+  // Инициализация
+  predictionText.style.opacity = '1';
+  ballButton.style.opacity = '1';
+  loadingText.style.opacity = '0';
 });
