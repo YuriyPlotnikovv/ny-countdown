@@ -25,8 +25,27 @@
 
 <body>
 <main class="new-year-countdown">
-    <img class="new-year-countdown__image" src="/public/assets/main-image.webp" width="618" height="1000"
-         alt="Новогодняя ёлка">
+    <div class="new-year-countdown__main-container">
+        <div class="new-year-countdown__prediction">
+            <h2>🔮 Магический шар предсказаний</h2>
+
+            <div class="new-year-countdown__magic-ball" id="magicBall">
+                <div class="new-year-countdown__magic-ball-inner">
+                    <div class="new-year-countdown__magic-ball-display" id="predictionDisplay">?</div>
+                    <div class="new-year-countdown__magic-ball-stars"></div>
+                </div>
+            </div>
+
+            <button class="new-year-countdown__magic-ball-button" id="predictButton">
+                <span>Получить предсказание</span>
+            </button>
+
+            <div class="new-year-countdown__magic-ball-loading" id="loading">🔮 Думаю...</div>
+        </div>
+
+        <img class="new-year-countdown__image" src="/public/assets/main-image.webp" width="618" height="1000"
+             alt="Новогодняя ёлка">
+    </div>
 
     <div class="new-year-countdown__content">
         <h1 class="new-year-countdown__title">До начала праздников осталось:</h1>
