@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const targetTime = new Date("January 1, 2026 00:00:00").getTime();
+  const targetTime = new Date("January 1, 2027 00:00:00").getTime();
 
   const MS_IN_DAY = 86400000;
   const MS_IN_HOUR = 3600000;
