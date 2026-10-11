@@ -10,7 +10,7 @@
 
 ### New Year Countdown
 
-Project: https://countdown.yuriyplotnikovv.ru/
+Project: https://countdown.yp-projects.ru/
 
 Personal project for fun
 
@@ -53,7 +53,7 @@ Website: https://yuriyplotnikovv.ru
 
 ### Счётчик до Нового Года
 
-Проект: https://countdown.yuriyplotnikovv.ru/
+Проект: https://countdown.yp-projects.ru/
 
 Личный проект для развлечения
 
