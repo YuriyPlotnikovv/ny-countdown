@@ -1,7 +1,7 @@
 {
-  "name": "New Year Countdown",
+  "name": "new-year-countdown",
   "version": "1.0.0",
-  "description": "сайт YuriyPlotnikovv",
+  "description": "Cайт для новогоднего настроения от YuriyPlotnikovv",
   "main": "index.html",
   "author": "Yuriy Plotnikov",
   "license": "UNLICENSED",
@@ -52,7 +52,6 @@
     "source/scss/**/*.scss"
   ],
   "engines": {
-    "node": "v18.16.0",
-    "npm": "9.5.1"
+    "node": ">=18.0.0"
   }
 }
