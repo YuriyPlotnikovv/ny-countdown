@@ -1,8 +1,7 @@
 const gulp = require("gulp");
-const babel = require("gulp-babel");
 const plumber = require("gulp-plumber");
 const sourcemap = require("gulp-sourcemaps");
-const sass = require("gulp-sass")(require("node-sass"));
+const sass = require("gulp-sass")(require("sass"));
 const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
 const csso = require("postcss-csso");
@@ -12,8 +11,13 @@ const webp = require("gulp-webp");
 const del = require("del");
 const sync = require("browser-sync").create();
 const concat = require("gulp-concat");
-const bulk = require("gulp-sass-bulk-importer");
 const clear = require("gulp-clean-css");
+
+const waitFor = (stream) => {
+  return new Promise((resolve, reject) => {
+    stream.on("end", resolve).on("error", reject);
+  });
+};
 
 // Styles
 const styles = () => {
@@ -21,10 +25,9 @@ const styles = () => {
     .src("src/css/style.scss")
     .pipe(plumber())
     .pipe(sourcemap.init())
-    .pipe(bulk())
     .pipe(
-      sass({
-        outputStyle: "compressed",
+      sass.sync({
+        style: "compressed",
       }).on("error", sass.logError)
     )
     .pipe(postcss([autoprefixer(), csso()]))
@@ -42,11 +45,6 @@ const scripts = () => {
     .src("src/js/modules/*.js")
     .pipe(sourcemap.init())
     .pipe(uglify())
-    .pipe(
-      babel({
-        presets: ["@babel/env"],
-      })
-    )
     .pipe(concat("script.min.js"))
     .pipe(sourcemap.write("."))
     .pipe(gulp.dest("public/js"))
@@ -55,21 +53,24 @@ const scripts = () => {
 exports.scripts = scripts;
 
 // Images
-const images = () => {
-  return gulp.src(['src/assets/**/*.{jpg,jpeg,png}', '!src/assets/icons/**/*'])
+const images = async () => {
+  const convert = gulp
+    .src(["src/assets/**/*.{jpg,jpeg,png}", "!src/assets/icons/**/*"])
     .pipe(imagemin())
     .pipe(webp({ quality: 80 }))
-    .pipe(gulp.dest('public/assets'))
-    .on('end', () => {
-      gulp.src('src/assets/**/*.webp')
-        .pipe(gulp.dest('public/assets'));
-    });
+    .pipe(gulp.dest("public/assets"));
+
+  const copyWebp = gulp
+    .src("src/assets/**/*.webp")
+    .pipe(gulp.dest("public/assets"));
+
+  await Promise.all([convert, copyWebp].map(waitFor));
 };
 exports.images = images;
 
 // Copy
-const copy = (done) => {
-  gulp
+const copy = () => {
+  return gulp
     .src(
       [
         "src/js/vendor/*.js",
@@ -78,10 +79,9 @@ const copy = (done) => {
         "src/assets/icons/*",
         "src/assets/*.mp3",
       ],
-      { base: 'src' }
+      { base: "src" }
     )
     .pipe(gulp.dest("public/"));
-  done();
 };
 exports.copy = copy;
 
@@ -99,3 +99,29 @@ const build = gulp.series(
   gulp.parallel(styles, scripts)
 );
 exports.build = build;
+
+// Server
+const server = (done) => {
+  sync.init({
+    server: {
+      baseDir: "./",
+    },
+    cors: true,
+    notify: false,
+  });
+  done();
+};
+exports.server = server;
+
+// Watch
+const watcher = () => {
+  gulp.watch("src/css/**/*.scss", gulp.series(styles));
+  gulp.watch("src/js/modules/**/*.js", gulp.series(scripts));
+};
+exports.watch = watcher;
+
+exports.default = gulp.series(
+  build,
+  server,
+  watcher
+);

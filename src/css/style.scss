@@ -1,4 +1,4 @@
-$font-family: "Transforma Script", Verdana, sans-serif;
+$font-family: "Transforma Script", verdana, sans-serif;
 $text-color: #333333;
 $background-color: #f0f0f0;
 $border-color: #cccccc;
@@ -21,18 +21,22 @@ $media-small: 1325px;
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
 @keyframes shake {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateX(0);
   }
+
   25% {
     transform: translateX(-5px);
   }
+
   75% {
     transform: translateX(5px);
   }
@@ -43,9 +47,11 @@ $media-small: 1325px;
     transform: scale(0.8);
     opacity: 0.5;
   }
+
   50% {
     transform: scale(1.1);
   }
+
   100% {
     transform: scale(1);
     opacity: 1;
@@ -56,9 +62,11 @@ $media-small: 1325px;
   0% {
     transform: translate(-50%, -50%) scale(1);
   }
+
   50% {
     transform: translate(-50%, -50%) scale(1.1);
   }
+
   100% {
     transform: translate(-50%, -50%) scale(1);
   }
@@ -68,7 +76,8 @@ body {
   position: relative;
 }
 
-html, body {
+html,
+body {
   display: flex;
   flex-direction: column;
 
@@ -80,7 +89,6 @@ html, body {
   color: $text-color;
 
   scroll-behavior: smooth;
-  overflow-scrolling: touch;
 }
 
 .new-year-countdown {
@@ -123,17 +131,17 @@ html, body {
     align-self: center;
     gap: 20px;
     padding: 20px;
+  }
 
-    h2 {
-      margin: 0;
-      padding: 0;
-      font-size: 24px;
-      text-align: center;
-      color: $text-color;
+  &__prediction h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    text-align: center;
+    color: $text-color;
 
-      @media (max-width: $media-medium) {
-        font-size: 20px;
-      }
+    @media (max-width: $media-medium) {
+      font-size: 20px;
     }
   }
 
@@ -163,20 +171,23 @@ html, body {
     align-items: center;
     width: 100%;
     height: 100%;
-    background: radial-gradient(
+    background:
+      radial-gradient(
         circle at 30% 30%,
         #4a00e0,
         #8e2de2,
         #000428
-    );
-    box-shadow: 0 0 30px rgba(142, 45, 226, 0.5),
-    inset 0 0 50px rgba(0, 0, 0, 0.8);
+      );
+    box-shadow:
+      0 0 30px rgba(142, 45, 226, 0.5),
+      inset 0 0 50px rgba(0, 0, 0, 0.8);
     border-radius: 50%;
     transition: all 0.5s ease;
 
     &:hover {
-      box-shadow: 0 0 40px rgba(142, 45, 226, 0.7),
-      inset 0 0 50px rgba(0, 0, 0, 0.8);
+      box-shadow:
+        0 0 40px rgba(142, 45, 226, 0.7),
+        inset 0 0 50px rgba(0, 0, 0, 0.8);
       transform: scale(1.05);
     }
 
@@ -201,9 +212,9 @@ html, body {
   &__magic-ball-text {
     position: relative;
     z-index: 3;
-    color: white;
+    color: #ffffff;
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 700;
     text-align: center;
     padding: 20px;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
@@ -227,8 +238,8 @@ html, body {
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 18px;
-    color: white;
-    font-weight: bold;
+    color: #ffffff;
+    font-weight: 700;
     opacity: 0;
     transition: opacity 0.3s ease;
     animation: pulse 1.5s infinite;
@@ -259,11 +270,12 @@ html, body {
       width: 200%;
       height: 200%;
       opacity: 0.6;
-      background: radial-gradient(2px 2px at 40px 20px, #ffffff, transparent),
-      radial-gradient(2px 2px at 80px 60px, #ffffff, transparent),
-      radial-gradient(2px 2px at 120px 30px, #ffffff, transparent),
-      radial-gradient(2px 2px at 160px 80px, #ffffff, transparent),
-      radial-gradient(2px 2px at 200px 40px, #ffffff, transparent);
+      background:
+        radial-gradient(2px 2px at 40px 20px, #ffffff, transparent),
+        radial-gradient(2px 2px at 80px 60px, #ffffff, transparent),
+        radial-gradient(2px 2px at 120px 30px, #ffffff, transparent),
+        radial-gradient(2px 2px at 160px 80px, #ffffff, transparent),
+        radial-gradient(2px 2px at 200px 40px, #ffffff, transparent);
       animation: rotate 10s linear infinite;
       content: "";
     }
@@ -329,22 +341,22 @@ html, body {
 
     width: 120px;
     height: 120px;
+  }
 
-    &-circle {
-      transform: rotate(-90deg);
-      transform-origin: 50% 50%;
+  &__progress-ring-circle {
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
 
-      fill: transparent;
-      stroke-width: 8;
+    fill: transparent;
+    stroke-width: 8;
+  }
 
-      &--back {
-        stroke: $stroke-back;
-      }
+  &__progress-ring-circle--back {
+    stroke: $stroke-back;
+  }
 
-      &--front {
-        stroke: $stroke-front;
-      }
-    }
+  &__progress-ring-circle--front {
+    stroke: $stroke-front;
   }
 
   &__progress-value {
@@ -358,7 +370,8 @@ html, body {
     align-items: center;
     transform: translate(-50%, -50%);
 
-    &-digit, &-text {
+    &-digit,
+    &-text {
       user-select: none;
     }
 
@@ -373,7 +386,8 @@ html, body {
     }
   }
 
-  &__scroll-button, &__audio-button {
+  &__scroll-button,
+  &__audio-button {
     position: absolute;
     top: 30px;
     display: block;
@@ -389,7 +403,8 @@ html, body {
 
     transition: opacity 0.4s ease-in-out;
 
-    &:hover, &:active {
+    &:hover,
+    &:active {
       opacity: 0.8;
     }
 
@@ -407,7 +422,8 @@ html, body {
     left: 30px;
   }
 
-  &__scroll-icon, &__audio-icon {
+  &__scroll-icon,
+  &__audio-icon {
     width: 60px;
     height: 60px;
 
@@ -440,55 +456,56 @@ html, body {
     margin: 0 auto 50px;
 
     justify-items: center;
+  }
 
-    &-day, &-weekday {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+  &__calendar-day,
+  &__calendar-weekday {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-      box-sizing: border-box;
-      width: 45px;
-      height: 45px;
-      padding: 10px;
+    box-sizing: border-box;
+    width: 45px;
+    height: 45px;
+    padding: 10px;
 
-      text-align: center;
-      border: 1px solid $border-color;
-      border-radius: 5px;
+    text-align: center;
+    border: 1px solid $border-color;
+    border-radius: 5px;
 
-      user-select: none;
+    user-select: none;
 
-      @media (max-width: $media-medium) {
-        width: 35px;
-        height: 35px;
-      }
+    @media (max-width: $media-medium) {
+      width: 35px;
+      height: 35px;
     }
+  }
 
-    &-weekday {
-      font-weight: 700;
-      background-color: $background-color;
-    }
+  &__calendar-weekday {
+    font-weight: 700;
+    background-color: $background-color;
+  }
 
-    &-past {
-      position: relative;
+  &__calendar-past {
+    position: relative;
+  }
 
-      &::before {
-        position: absolute;
+  &__calendar-past::before {
+    position: absolute;
 
-        display: block;
-        width: 30px;
-        height: 30px;
+    display: block;
+    width: 30px;
+    height: 30px;
 
-        background-image: url(/public/assets/icons/icon-cross.png);
-        background-position: center;
-        background-size: contain;
+    background-image: url("/public/assets/icons/icon-cross.png");
+    background-position: center;
+    background-size: contain;
 
-        content: "";
+    content: "";
 
-        @media (max-width: $media-medium) {
-          width: 25px;
-          height: 25px;
-        }
-      }
+    @media (max-width: $media-medium) {
+      width: 25px;
+      height: 25px;
     }
   }
 }

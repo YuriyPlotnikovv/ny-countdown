@@ -20,15 +20,7 @@ jobs:
             - name: Set up Node.js
               uses: actions/setup-node@v4
               with:
-                  node-version: 23
-
-            - name: Cache Node.js modules
-              uses: actions/cache@v4
-              with:
-                  path: ~/.npm
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-                  restore-keys: |
-                      ${{ runner.os }}-node-
+                  node-version: 22
 
             - name: Generate README.md
               env:
